@@ -1,0 +1,679 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "Segoe UI", sans-serif;
+}
+
+body {
+  background-color: #eef2ff;
+  padding: 20px;
+}
+
+.dashboard-container {
+  display: flex;
+  gap: 20px;
+}
+
+/* Panel Principal */
+.main-panel {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* Métricas Superiores */
+.metricas-superiores {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 16px;
+}
+
+.card {
+  background-color: white;
+  color: white;
+  border-radius: 12px;
+  padding: 16px;
+  font-size: 0.9rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.card h3 {
+  font-size: 1rem;
+  margin-bottom: 8px;
+}
+
+.card .valor {
+  font-size: 1.6rem;
+  font-weight: bold;
+}
+
+.card .porcentaje {
+  font-size: 0.9rem;
+  opacity: 0.8;
+  margin-left: 6px;
+}
+
+.card .secundario {
+  font-size: 0.8rem;
+  color: #ddddff;
+}
+
+/* Colores */
+.azul { background-color: #2563eb; }
+.verde { background-color: #16a34a; }
+.morado { background-color: #7c3aed; }
+.naranja { background-color: #f97316; }
+.rojo { background-color: #dc2626; }
+.violeta { background-color: #6366f1; }
+
+
+/* SIDEBAR */
+.sidebar {
+  width: 260px;
+  background-color: #ffffff;
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.04);
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.bloque-sidebar {
+  background-color: #ffffff;
+  border-radius: 12px;
+  padding: 16px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  margin-bottom: 16px;
+  width: 100%;
+}
+
+.bloque-sidebar:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s ease;
+}
+
+
+
+.input {
+  width: 100%;
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid #cbd5e1;
+  font-size: 0.95rem;
+}
+
+.lista-metricas {
+  list-style: none;
+  font-size: 0.9rem;
+  padding-left: 0;
+  color: #334155;
+}
+
+.lista-metricas li {
+  margin-bottom: 8px;
+}
+
+.lista-metricas span {
+  font-weight: 600;
+}
+
+
+.contenido-medio {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+/* Sección de mejores profesores */
+.mejores-profesores {
+  flex: 1;
+  min-width: 280px;
+  background-color: #ffffff;
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.05);
+}
+
+.mejores-profesores h3 {
+  font-size: 1.1rem;
+  color: #1e3a8a;
+  margin-bottom: 12px;
+}
+
+.lista-profesores {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.lista-profesores li {
+  padding: 12px 0;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.nombre {
+  font-weight: bold;
+  font-size: 0.95rem;
+  color: #0f172a;
+}
+
+.info {
+  font-size: 0.85rem;
+  color: #475569;
+}
+
+
+.alertas-sistema {
+  flex: 1;
+  min-width: 280px;
+  background-color: #ffffff;
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.05);
+}
+
+.alertas-sistema h3 {
+  font-size: 1.1rem;
+  color: #1e3a8a;
+  margin-bottom: 12px;
+}
+
+.lista-alertas {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.alerta {
+  font-size: 0.9rem;
+  padding: 12px;
+  border-radius: 8px;
+  color: #1e293b;
+  line-height: 1.4;
+}
+
+.alerta.alta { background-color: #fee2e2; border-left: 4px solid #dc2626; }
+.alerta.media { background-color: #fef3c7; border-left: 4px solid #f59e0b; }
+.alerta.baja { background-color: #d1fae5; border-left: 4px solid #10b981; }
+.alerta.info { background-color: #dbeafe; border-left: 4px solid #3b82f6; }
+
+
+.contenido-inferior {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+/* Tarjeta de asistencia */
+.tendencia-asistencia {
+  flex: 1;
+  min-width: 280px;
+  background-color: #ffffff;
+  border-radius: 12px;
+  padding: 20px;
+  text-align: center;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.05);
+}
+
+.tendencia-asistencia h3 {
+  font-size: 1.1rem;
+  color: #1e3a8a;
+  margin-bottom: 12px;
+}
+
+.grafico-asistencia {
+  background-color: #dbeafe;
+  border-radius: 50%;
+  width: 120px;
+  height: 120px;
+  margin: 0 auto 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.6rem;
+  color: #1d4ed8;
+  font-weight: bold;
+}
+
+.grafico-asistencia p {
+  font-size: 0.9rem;
+  color: #475569;
+}
+
+/* Tarjeta de cursos por estado */
+.estado-cursos {
+  flex: 1;
+  min-width: 280px;
+  background-color: #ffffff;
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.05);
+}
+
+.estado-cursos h3 {
+  font-size: 1.1rem;
+  color: #1e3a8a;
+  margin-bottom: 12px;
+}
+
+.lista-cursos {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.lista-cursos li {
+  margin-bottom: 12px;
+  font-size: 0.9rem;
+}
+
+.barra {
+  height: 10px;
+  background-color: #e2e8f0;
+  border-radius: 8px;
+  overflow: hidden;
+  margin-top: 4px;
+}
+
+.relleno {
+  height: 100%;
+  border-radius: 8px;
+  transition: width 0.8s ease;
+}
+
+
+.relleno.activo { background-color: #16a34a; }
+.relleno.inactivo { background-color: #dc2626; }
+.relleno.nuevo { background-color: #facc15; }
+.relleno.revision { background-color: #3b82f6; }
+
+
+/* Sección inferior */
+.contenido-inferior {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+/* Asistencia docente */
+.tendencia-asistencia {
+  flex: 1;
+  min-width: 280px;
+  background-color: #ffffff;
+  border-radius: 12px;
+  padding: 20px;
+  text-align: center;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.05);
+}
+
+.tendencia-asistencia h3 {
+  font-size: 1.1rem;
+  color: #1e3a8a;
+  margin-bottom: 12px;
+}
+
+.grafico-asistencia {
+  background-color: #dbeafe;
+  border-radius: 50%;
+  width: 120px;
+  height: 120px;
+  margin: 0 auto 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.6rem;
+  color: #1d4ed8;
+  font-weight: bold;
+}
+
+.grafico-asistencia p {
+  font-size: 0.9rem;
+  color: #475569;
+}
+
+/* Estado de cursos */
+.estado-cursos {
+  flex: 1;
+  min-width: 280px;
+  background-color: #ffffff;
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.05);
+}
+
+.estado-cursos h3 {
+  font-size: 1.1rem;
+  color: #1e3a8a;
+  margin-bottom: 12px;
+}
+
+.lista-cursos {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.lista-cursos li {
+  margin-bottom: 12px;
+  font-size: 0.9rem;
+}
+
+.barra {
+  height: 10px;
+  background-color: #e2e8f0;
+  border-radius: 8px;
+  overflow: hidden;
+  margin-top: 4px;
+}
+
+.relleno {
+  height: 100%;
+  border-radius: 8px;
+}
+
+.relleno.activo { background-color: #16a34a; }
+.relleno.inactivo { background-color: #dc2626; }
+.relleno.nuevo { background-color: #facc15; }
+.relleno.revision { background-color: #3b82f6; }
+
+
+.lista-departamentos {
+  list-style: none;
+  padding-left: 0;
+  font-size: 0.9rem;
+  max-height: 160px;
+  overflow-y: auto;
+}
+
+.lista-departamentos li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 6px 0;
+  border-bottom: 1px solid #f1f5f9;
+  color: #334155;
+}
+
+.lista-departamentos .nombre {
+  font-weight: 500;
+}
+
+.lista-departamentos .info {
+  font-size: 0.85rem;
+  color: #64748b;
+}
+.sub-metrica {
+  font-size: 0.9rem;
+  margin-bottom: 10px;
+  color: #334155;
+}
+
+.sub-metrica strong {
+  color: #0f172a;
+}
+
+.sub-metrica.completadas {
+  background-color: #dcfce7;
+  padding: 6px;
+  border-radius: 8px;
+}
+
+.sub-metrica.pendientes {
+  background-color: #fef9c3;
+  padding: 6px;
+  border-radius: 8px;
+}
+
+.sub-metrica.mejora {
+  background-color: #bbf7d0;
+  padding: 6px;
+  border-radius: 8px;
+}
+
+.sub-metrica.top {
+  background-color: #ddd6fe;
+  padding: 6px;
+  border-radius: 8px;
+}
+
+.sub-metrica .barra {
+  margin-top: 4px;
+  height: 8px;
+  background-color: #e2e8f0;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+
+.tendencia-asistencia {
+  flex: 1;
+  min-width: 280px;
+  background-color: #ffffff;
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.05);
+}
+
+.tendencia-asistencia h3 {
+  font-size: 1.1rem;
+  color: #1e3a8a;
+  margin-bottom: 4px;
+}
+
+.tendencia-asistencia .subtitulo {
+  font-size: 0.85rem;
+  color: #64748b;
+  margin-bottom: 16px;
+}
+
+.asistencia-meses {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.mes {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 0.85rem;
+  color: #1e293b;
+  width: 55px;
+}
+
+.circulo {
+  background-color: #3b82f6;
+  color: white;
+  border-radius: 50%;
+  width: 48px;
+  height: 48px;
+  font-size: 0.9rem;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 6px;
+}
+
+
+.estado-cursos {
+  flex: 1;
+  min-width: 280px;
+  background-color: #ffffff;
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.05);
+}
+
+.estado-cursos h3 {
+  font-size: 1.1rem;
+  color: #1e3a8a;
+  margin-bottom: 4px;
+}
+
+.estado-cursos .subtitulo {
+  font-size: 0.85rem;
+  color: #64748b;
+  margin-bottom: 12px;
+}
+
+.lista-cursos {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.lista-cursos li {
+  margin-bottom: 14px;
+}
+
+.estado-cursos .estado {
+  font-weight: 500;
+  display: inline-block;
+  width: 120px;
+}
+
+.estado-cursos .valor {
+  float: right;
+  font-weight: bold;
+  color: #1e293b;
+}
+
+.estado-cursos .barra {
+  clear: both;
+  height: 8px;
+  background-color: #e2e8f0;
+  border-radius: 8px;
+  overflow: hidden;
+  margin-top: 6px;
+}
+
+.estado-cursos .relleno {
+  height: 100%;
+  border-radius: 8px;
+}
+
+.estado-cursos .relleno.activo { background-color: #16a34a; }
+.estado-cursos .relleno.inactivo { background-color: #dc2626; }
+.estado-cursos .relleno.revision { background-color: #f59e0b; }
+.estado-cursos .relleno.nuevo { background-color: #3b82f6; }
+
+.total-cursos {
+  font-size: 0.9rem;
+  text-align: right;
+  margin-top: 10px;
+  color: #334155;
+}
+
+
+.lista-profesores li {
+  opacity: 1;
+  transform: translateY(0);
+  transition: all 0.3s ease;
+}
+
+.lista-profesores li.oculto {
+  opacity: 0;
+  transform: translateY(10px);
+  pointer-events: none;
+  height: 0;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+
+.metricas-superiores .card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+}
+
+.metricas-superiores .card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+
+.card {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeUp 0.6s ease forwards;
+}
+
+.card:nth-child(1) { animation-delay: 0s; }
+.card:nth-child(2) { animation-delay: 0.1s; }
+.card:nth-child(3) { animation-delay: 0.2s; }
+.card:nth-child(4) { animation-delay: 0.3s; }
+.card:nth-child(5) { animation-delay: 0.4s; }
+.card:nth-child(6) { animation-delay: 0.5s; }
+
+@keyframes fadeUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+.card-clase {
+  background-color: #ecfdf5;
+  border: 1px solid #d1fae5;
+  padding: 12px;
+  border-radius: 10px;
+  margin-bottom: 12px;
+  font-size: 0.85rem;
+  color: #065f46;
+}
+
+.nombre-clase {
+  font-weight: bold;
+  margin-bottom: 6px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.badge.verde {
+  background-color: #34d399;
+  color: white;
+  font-size: 0.7rem;
+  padding: 2px 6px;
+  border-radius: 999px;
+}
+
+.info-clase {
+  list-style: none;
+  padding-left: 0;
+  color: #065f46;
+  margin: 0;
+}
+
+.info-clase li {
+  margin: 2px 0;
+}
+
+
+/* Contenedor interno con scroll */
+.contenedor-clases {
+  max-height: 220px; /* Ajustable según diseño */
+  overflow-y: auto;
+  padding-right: 4px; /* espacio para scroll */
+}
+
+/* Opcional: estilos para el scroll */
+.contenedor-clases::-webkit-scrollbar {
+  width: 6px;
+}
+
+.contenedor-clases::-webkit-scrollbar-thumb {
+  background-color: #cbd5e1;
+  border-radius: 8px;
+}

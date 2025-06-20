@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dashboard Académico</title>
+  <link rel="stylesheet" href="styles/main.css" />
+</head>
+<body>
+  <div class="dashboard-container">
+    
+    <!-- Aquí iría la sidebar (más adelante) -->
+     <!-- Sidebar -->
+  <!-- Sidebar completa -->
+<aside class="sidebar">
+
+  <!-- 📘 CLASES DE HOY -->
+  <section class="bloque-sidebar">
+  <h3>📘 Clases de Hoy</h3>
+
+  <div class="contenedor-clases">
+    <div class="card-clase">
+      <div class="nombre-clase">
+        Cálculo I <span class="badge verde">En curso</span>
+      </div>
+      <ul class="info-clase">
+        <li>👩‍🏫 Dr. María González</li>
+        <li>📍 Aula 101</li>
+        <li>🕒 08:00 - 10:00</li>
+        <li>👥 35 estudiantes</li>
+      </ul>
+    </div>
+
+    <div class="card-clase">
+      <div class="nombre-clase">
+        Física Cuántica <span class="badge verde">En curso</span>
+      </div>
+      <ul class="info-clase">
+        <li>👨‍🏫 Prof. Carlos Ruiz</li>
+        <li>📍 Lab 205</li>
+        <li>🕒 10:00 - 12:00</li>
+        <li>👥 28 estudiantes</li>
+      </ul>
+    </div>
+
+    <!-- Puedes duplicar este bloque para simular más clases -->
+  </div>
+</section>
+
+  <!-- 🏫 DEPARTAMENTOS -->
+  <section class="bloque-sidebar">
+    <h3>Departamentos</h3>
+    <ul class="lista-departamentos">
+      <li><span class="nombre">Matemáticas</span><span class="info">(15) ⭐ 4.3</span></li>
+      <li><span class="nombre">Física</span><span class="info">(12) ⭐ 4.1</span></li>
+      <li><span class="nombre">Química</span><span class="info">(10) ⭐ 4.4</span></li>
+      <li><span class="nombre">Historia</span><span class="info">(8) ⭐ 4.0</span></li>
+      <li><span class="nombre">Literatura</span><span class="info">(9) ⭐ 4.2</span></li>
+      <li><span class="nombre">Biología</span><span class="info">(11) ⭐ 4.3</span></li>
+      <li><span class="nombre">Inglés</span><span class="info">(6) ⭐ 3.9</span></li>
+    </ul>
+  </section>
+
+  <!-- 📈 MÉTRICAS DE RENDIMIENTO -->
+  <section class="bloque-sidebar">
+    <h3>📈 Métricas de Rendimiento</h3>
+
+    <div class="sub-metrica">
+      <p><strong>Meta Mensual</strong></p>
+      <div class="barra">
+        <div class="relleno activo" style="width: 93%"></div>
+      </div>
+      <small>Actual: 4.2 (93%)</small>
+    </div>
+
+    <div class="sub-metrica completadas">
+      ✅ Completadas: <strong>187</strong>
+    </div>
+
+    <div class="sub-metrica pendientes">
+      🕒 Pendientes: <strong>58</strong>
+    </div>
+
+    <div class="sub-metrica mejora">
+      📈 Mejora del Mes: <strong>+0.3</strong>
+    </div>
+
+    <div class="sub-metrica top">
+      ⭐ Top Performers: <strong>23</strong>
+    </div>
+  </section>
+
+</aside>
+
+
+
+    <!-- Panel Principal -->
+    <main class="main-panel">
+
+      <!-- 🟦 Métricas Superiores -->
+      <section class="metricas-superiores">
+        <div class="card azul">
+          <h3>Profesores Totales</h3>
+          <p class="valor">245</p>
+        </div>
+
+        <div class="card verde">
+          <h3>Profesores Activos</h3>
+          <p class="valor">198 <span class="porcentaje">81%</span></p>
+        </div>
+
+        <div class="card morado">
+          <h3>Puntuación Promedio</h3>
+          <p class="valor">4.2 ⭐</p>
+        </div>
+
+        <div class="card naranja">
+          <h3>Cursos Activos</h3>
+          <p class="valor">89</p>
+        </div>
+
+        <div class="card rojo">
+          <h3>Cursos Inactivos</h3>
+          <p class="valor">12</p>
+        </div>
+
+        <div class="card violeta">
+          <h3>Última Reunión</h3>
+          <p class="valor">14 jun 2024<br><span class="secundario">12 asistentes</span></p>
+        </div>
+      </section>
+
+      <section class="contenido-medio">
+          
+
+  <!-- 📈 Profesores mejor calificados -->
+  <div class="mejores-profesores">
+    <h3>📋 Mejores Profesores</h3>
+    <ol class="lista-profesores">
+      <li>
+        <div class="nombre">1. Ana Torres</div>
+        <div class="info">⭐ 4.9 — Lenguaje — 8 cursos</div>
+      </li>
+      <li>
+        <div class="nombre">2. Luis Salazar</div>
+        <div class="info">⭐ 4.8 — Matemáticas — 7 cursos</div>
+      </li>
+      <li>
+        <div class="nombre">3. Carmen Paredes</div>
+        <div class="info">⭐ 4.8 — Historia — 5 cursos</div>
+      </li>
+      <li>
+        <div class="nombre">4. Pedro Ramos</div>
+        <div class="info">⭐ 4.7 — Biología — 6 cursos</div>
+      </li>
+    </ol>
+  </div>
+    <!-- 🔔 Alertas del Sistema -->
+    <div class="alertas-sistema">
+  <h3>🔔 Alertas del Sistema</h3>
+  <ul class="lista-alertas">
+    <li class="alerta alta">
+      <strong>📕 Evaluación pendiente:</strong>
+      4 profesores sin evaluación este mes.
+    </li>
+    <li class="alerta media">
+      <strong>📙 Cursos inactivos:</strong>
+      3 cursos llevan más de 30 días inactivos.
+    </li>
+    <li class="alerta baja">
+      <strong>📗 Reuniones sin confirmar:</strong>
+      2 coordinadores no han respondido.
+    </li>
+    <li class="alerta info">
+      <strong>📘 Recordatorio:</strong>
+      Revisión de plan docente vence el viernes.
+    </li>
+  </ul>
+</div>
+</section>
+<!-- 📈 Asistencia y 📊 Cursos Totales -->
+<section class="contenido-inferior">
+<!-- 📈 Tendencia de Asistencia Docente -->
+<div class="tendencia-asistencia">
+  <h3>📈 Tendencia de Asistencia Docente</h3>
+  <p class="subtitulo">Porcentaje de asistencia mensual</p>
+  
+  <div class="asistencia-meses">
+    <div class="mes">
+      <div class="circulo">92%</div>
+      <span>Ene</span>
+    </div>
+    <div class="mes">
+      <div class="circulo">89%</div>
+      <span>Feb</span>
+    </div>
+    <div class="mes">
+      <div class="circulo">94%</div>
+      <span>Mar</span>
+    </div>
+    <div class="mes">
+      <div class="circulo">87%</div>
+      <span>Abr</span>
+    </div>
+    <div class="mes">
+      <div class="circulo">91%</div>
+      <span>May</span>
+    </div>
+    <div class="mes">
+      <div class="circulo">95%</div>
+      <span>Jun</span>
+    </div>
+  </div>
+</div>
+<!-- 📊 Cursos Totales -->
+<div class="estado-cursos">
+  <h3>📊 Cursos Totales</h3>
+  <p class="subtitulo">Distribución por estado</p>
+  <ul class="lista-cursos">
+    <li>
+      <span class="estado">🟢 Activos</span>
+      <span class="valor">89</span>
+      <div class="barra"><div class="relleno activo" style="width: 72%"></div></div>
+    </li>
+    <li>
+      <span class="estado">🔴 Inactivos</span>
+      <span class="valor">12</span>
+      <div class="barra"><div class="relleno inactivo" style="width: 10%"></div></div>
+    </li>
+    <li>
+      <span class="estado">🟡 En Revisión</span>
+      <span class="valor">8</span>
+      <div class="barra"><div class="relleno revision" style="width: 7%"></div></div>
+    </li>
+    <li>
+      <span class="estado">🔵 Nuevos</span>
+      <span class="valor">15</span>
+      <div class="barra"><div class="relleno nuevo" style="width: 11%"></div></div>
+    </li>
+  </ul>
+  <p class="total-cursos">Total de Cursos: <strong>124</strong></p>
+</div>
+
+
+
+
+</section>
+   
+
+</body>
+</html>
